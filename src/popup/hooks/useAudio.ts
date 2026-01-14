@@ -35,7 +35,7 @@ export const useAudio = (initialMode: AudioMode = 'mic-only') => {
     }
   };
 
-  const stopRecording = async () => {
+  const stopRecording = async (): Promise<Blob | null> => {
     try {
       const blob = await audioServiceRef.current.stopRecording();
       setAudioBlob(blob);
@@ -44,8 +44,10 @@ export const useAudio = (initialMode: AudioMode = 'mic-only') => {
       
       setMicStatus('ready');
       setTabStatus('ready');
+      return blob;
     } catch (err: any) {
       setError(err.message || 'Failed to stop recording');
+      return null;
     }
   };
 

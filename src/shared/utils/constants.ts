@@ -70,3 +70,15 @@ export const AI_PROVIDERS = [
 ];
 
 export const API_BASE_URL = process.env.API_BASE_URL || 'http://localhost:3000';
+
+// Transcription API constants
+export const API_ENDPOINTS = {
+  TRANSCRIBE: '/api/transcribe',
+};
+
+export const TRANSCRIPTION_CONFIG = {
+  TIMEOUT: 60000, // 60 seconds
+  MAX_RETRIES: 2,
+  RETRY_DELAY: 1000, // 1 second
+  MAX_HISTORY_ITEMS: 20,
+};

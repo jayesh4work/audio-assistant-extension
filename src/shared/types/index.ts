@@ -1,6 +1,7 @@
 export * from './audio';
 export * from './providers';
 export * from './settings';
+export * from './transcription';
 
 export interface User {
   id: string;
